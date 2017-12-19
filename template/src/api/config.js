@@ -1,6 +1,4 @@
-{{#axios}}
-import axios from 'axios'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-{{/axios}}
+import axios from 'axios'
 export const commonParams = {
   pageIndex: 1,
   pageSize: 10
@@ -16,7 +14,6 @@ export const commonParams = {
 axios.interceptors.request.use(
   config => {
     // 请求时做一些处理
-    // 判断是否存在token，如果存在的话，则每个http header都加上token
     return config
   },
   error => {

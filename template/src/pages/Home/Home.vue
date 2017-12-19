@@ -1,31 +1,29 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <h1>\{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <h2>赢财富项目文档介绍</h2>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
+      <li><span>拭目以待</span></li>
     </ul>
-    <h2>Ecosystem</h2>
+    <h2>开源插件文档</h2>
     <ul>
+      <li><a href="https://vuejs.org" target="_blank">vue</a></li>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+      <li><a href="https://github.com/axios/axios" target="_blank">axios</a></li>
+      <li><a href="https://webpack.js.org/" target="_blank">webpack</a></li>
+      <li><a href="http://lesscss.cn/" target="_blank">less</a></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Home',
   data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
     return {
-      msg: 'Welcome to Your Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+      msg: '欢迎来到赢财富 Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
     }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}

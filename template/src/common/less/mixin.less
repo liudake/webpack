@@ -1,0 +1,71 @@
+.no-wrap(@lines) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @lines;
+    -webkit-box-orient: vertical;
+}
+
+.extend-click() {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+  }
+}
+
+.border-top-1px(@color) {
+  &:before {
+    left: 0;
+    top: 0;
+    transform-origin: 0 top;
+    border-top: 1px solid @color;
+  }
+}
+.border-right-1px(@color) {
+  &:after {
+    top: 0;
+    right: 0;
+    transform-origin: right 0;
+    border-right: 1px solid @color;
+  }
+}
+.border-bottom-1px(@color) {
+  &:after {
+    left: 0;
+    bottom: 0;
+    transform-origin: 0 bottom;
+    border-bottom: 1px solid @color;
+  }
+}
+.border-left-1px(@color) {
+  &:before {
+    top: 0;
+    left: 0;
+    transform-origin: left 0;
+    border-left: 1px solid @color;
+  }
+}
+
+.border-none() {
+  &:after {
+    display: none;
+  }
+}
+
+.border-hide() {
+  &:after {
+    border: none;
+  }
+}
+
+// 背景图片地址和大小
+.bis(@url) { 
+	background-image: url(@url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}

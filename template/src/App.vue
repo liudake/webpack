@@ -4,20 +4,20 @@
     {{#router}}
     <router-view/>
     {{else}}
-    <HelloWorld/>
+    <HelloYcf/>
     {{/router}}
   </div>
 </template>
 
 <script>
 {{#unless router}}
-import HelloWorld from './components/HelloWorld'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import HelloYcf from './components/Hello-ycf/Hello-ycf'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 {{/unless}}
 export default {
   name: 'app'{{#router}}{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{else}},
   components: {
-    HelloWorld{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    HelloYcf{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}{{/router}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>

@@ -1,6 +1,10 @@
-{{#axios}}
-import axios from 'axios'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-{{/axios}}
+import axios from 'axios'
+import qs from 'qs'
+import {
+  checkStatus,
+  checkCode,
+  checkErr
+} from './config'
 
 /**
  * [get,post,put,delete      [封装请求]]
@@ -45,6 +49,7 @@ export default {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       transformRequest: [function (data) {
+        data = qs.stringify(data)
         return data
       }]
     })
@@ -69,6 +74,7 @@ export default {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       transformRequest: [function (data) {
+        data = qs.stringify(data)
         return data
       }]
     })
@@ -93,6 +99,7 @@ export default {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       transformRequest: [function (data) {
+        data = qs.stringify(data)
         return data
       }]
     })
