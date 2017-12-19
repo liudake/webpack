@@ -48,17 +48,9 @@ module.exports = {
       "type": "confirm",
       "message": "Install vuex?"
     },
-    "vuex": {
-      "type": "confirm",
-      "message": "Install vuex?"
-    },
     "axios": {
       "type": "confirm",
       "message": "Install axios?"
-    },
-    "vant": {
-      "type": "confirm",
-      "message": "Install vant?"
     },
     "lint": {
       "type": "confirm",
@@ -130,7 +122,8 @@ module.exports = {
     "test/unit/setup.js": "unit && runner === 'jest'",
     "test/e2e/**/*": "e2e",
     "src/router/**/*": "router",
-    "src/store/**/*": "vuex"
+    "src/store/**/*": "vuex",
+    "src/api/**/*": "axios"
   },
   "completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 };
