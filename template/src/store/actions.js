@@ -6,8 +6,8 @@ import * as types from './mutation-type'
  * ==================================================================================
  */
 
-export const GetList = function({ commit, state},{list, index}) {
-  if(state === index) {
+export const GetList = function ({ commit, state }, { list, index }) {
+  if (state === index) {
     commit(types.SET_LIST, list)
     commit(types.SET_INDEX, index)
   }
