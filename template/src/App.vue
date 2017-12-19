@@ -22,7 +22,11 @@ export default {
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
+{{#less}}
+<style rel="stylesheet/less" lang='less'>
+{{else}}
 <style>
+{{/less}}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
