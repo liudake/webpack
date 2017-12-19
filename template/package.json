@@ -93,7 +93,6 @@
     "inject-loader": "^3.0.0",
     "babel-plugin-istanbul": "^4.1.1",
     "phantomjs-prebuilt": "^2.1.14",
-    "qs": "^6.5.0"{{/axios}},
     {{/if_eq}}
     "node-notifier": "^5.1.2",
     {{#e2e}}
