@@ -10,12 +10,11 @@ html {
   font-family: 'PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial,
     sans-serif, 'Droid Sans Fallback';
   user-select: none;
-  overflow-x: hidden !important;
-  overflow-y: scroll ;
   -webkit-text-size-adjust: 100% !important;
-  -webkit-overflow-scrolling : touch;
   -webkit-tap-highlight-color: transparent;
-  background: @color-background-f7;
+  {{#less}}
+  background: @color-background;
+  {{/less}}
 }
 
 .bold {

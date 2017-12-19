@@ -32,23 +32,42 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 {{#less}}
 <style rel="stylesheet/less" lang='less'>
+@import '../../common/less/variable';
 {{else}}
 <style scoped>
 {{/less}}
 h1, h2 {
   font-weight: normal;
+  {{#less}}
+  margin: 30px;
+  {{/less}}
 }
+{{#less}}
 ul {
   list-style-type: none;
   padding: 0;
+  line-height: 1.5;
   li {
     display: inline-block;
     margin: 0 10px;
     span {
-      color: #42b983;
+      color: @color-text-a;
     }
   }
 }
+{{else}}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+span {
+  color: #42b983;
+}
+{{/less}}
 
 a {
   color: #42b983;
