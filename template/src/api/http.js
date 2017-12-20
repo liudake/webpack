@@ -1,11 +1,6 @@
 import axios from 'axios'
 import qs from 'qs'
-import {
-  checkStatus,
-  checkCode,
-  checkErr,
-  baseURL
-} from './config'
+import { checkStatus, checkCode, checkErr, baseURL } from './config'
 
 /**
  * [get,post,put,delete      [封装请求]]
@@ -28,14 +23,14 @@ export default {
         'Content-Type': 'application/x-www-form-urlencoded'
       }
     })
-      .then((response) => {
+      .then(response => {
         return checkStatus(response)
       })
-      .then((res) => {
+      .then(res => {
         return checkCode(res)
       })
-      .catch((err) => {
-        return checkErr(err)        
+      .catch(err => {
+        return checkErr(err)
       })
   },
   post(url, data) {
@@ -49,19 +44,21 @@ export default {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      transformRequest: [function (data) {
-        data = qs.stringify(data)
-        return data
-      }]
+      transformRequest: [
+        function(data) {
+          data = qs.stringify(data)
+          return data
+        }
+      ]
     })
-      .then((response) => {
+      .then(response => {
         return checkStatus(response)
       })
-      .then((res) => {
+      .then(res => {
         return checkCode(res)
       })
-      .catch((err) => {
-        return checkErr(err)        
+      .catch(err => {
+        return checkErr(err)
       })
   },
   put(url, data) {
@@ -74,19 +71,21 @@ export default {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      transformRequest: [function (data) {
-        data = qs.stringify(data)
-        return data
-      }]
+      transformRequest: [
+        function(data) {
+          data = qs.stringify(data)
+          return data
+        }
+      ]
     })
-      .then((response) => {
+      .then(response => {
         return checkStatus(response)
       })
-      .then((res) => {
+      .then(res => {
         return checkCode(res)
       })
-      .catch((err) => {
-        return checkErr(err)        
+      .catch(err => {
+        return checkErr(err)
       })
   },
   delete(url, data) {
@@ -99,25 +98,28 @@ export default {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      transformRequest: [function (data) {
-        data = qs.stringify(data)
-        return data
-      }]
+      transformRequest: [
+        function(data) {
+          data = qs.stringify(data)
+          return data
+        }
+      ]
     })
-      .then((response) => {
+      .then(response => {
         return checkStatus(response)
       })
-      .then((res) => {
+      .then(res => {
         return checkCode(res)
       })
-      .catch((err) => {
-        return checkErr(err)        
+      .catch(err => {
+        return checkErr(err)
       })
   },
   alls(requests) {
-    return axios.all(requests)
-      .then(axios.spread(function (...res) {
+    return axios.all(requests).then(
+      axios.spread(function(...res) {
         return checkStatus(res)
-      }))
+      })
+    )
   }
 }

@@ -22,17 +22,17 @@
 import { getUserInfo } from '@/api/user'
 export default {
   name: 'Home',
-  data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+  data{{#unless_eq lintConfig "airbnb"}}{{/unless_eq}}() {
     return {
       msg: '欢迎来到赢财富 Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
     }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}},
-  created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+  created{{#unless_eq lintConfig "airbnb"}}{{/unless_eq}}() {
     this._getUserInfo(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}},
   methods:{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}{
-    _getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
-      getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}()
+    _getUserInfo{{#unless_eq lintConfig "airbnb"}}{{/unless_eq}}() {
+      getUserInfo{{#unless_eq lintConfig "airbnb"}}{{/unless_eq}}()
         .then(res => {
           console.log('res', res){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
         })
