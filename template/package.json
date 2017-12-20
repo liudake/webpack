@@ -100,7 +100,8 @@
     "cross-spawn": "^5.0.1",
     "nightwatch": "^0.9.12",
     "selenium-server": "^3.0.1",
-    {{/e2e}}{{#less}}
+    {{/e2e}}
+    {{#less}}
     "less": "^2.7.2",
     "less-loader": "^4.0.5",{{/less}}
     "postcss-import": "^11.0.0",
