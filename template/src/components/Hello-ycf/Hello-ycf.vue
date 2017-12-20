@@ -19,21 +19,58 @@
 </template>
 
 <script>
+import { getUserInfo } from '@/api/user'
 export default {
-  name: 'HelloYcf',
+  name: 'Hello',
   data{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
     return {
       msg: '欢迎来到赢财富 Vue.js App'{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
     }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}},
+  created{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+    this._getUserInfo(){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  }{{#if_eq lintConfig "airbnb"}},{{/if_eq}},
+  methods:{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}{
+    _getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}() {
+      getUserInfo{{#unless_eq lintConfig "airbnb"}} {{/unless_eq}}()
+        .then(res => {
+          console.log('res', res){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+        })
+        .catch(err => {
+          console.error('err', err){{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+        })
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+{{#less}}
+<style rel="stylesheet/less" lang='less'>
+@import '../../common/less/variable';
+{{else}}
 <style scoped>
+{{/less}}
 h1, h2 {
   font-weight: normal;
+  {{#less}}
+  margin: 30px;
+  {{/less}}
 }
+{{#less}}
+ul {
+  list-style-type: none;
+  padding: 0;
+  line-height: 1.5;
+  li {
+    display: inline-block;
+    margin: 0 10px;
+    span {
+      color: @color-text-a;
+    }
+  }
+}
+{{else}}
 ul {
   list-style-type: none;
   padding: 0;
@@ -42,7 +79,12 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a, span{
+span {
+  color: #42b983;
+}
+{{/less}}
+
+a {
   color: #42b983;
 }
 </style>

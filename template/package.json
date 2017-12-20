@@ -102,7 +102,7 @@
     "selenium-server": "^3.0.1",
     {{/e2e}}{{#less}}
     "less": "^2.7.2",
-    "less-loader": "^4.0.5"{{/less}},
+    "less-loader": "^4.0.5",{{/less}}
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "semver": "^5.3.0",

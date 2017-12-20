@@ -3,7 +3,8 @@ import qs from 'qs'
 import {
   checkStatus,
   checkCode,
-  checkErr
+  checkErr,
+  baseURL
 } from './config'
 
 /**
