@@ -107,7 +107,7 @@ module.exports = {
   // 添加DllReferencePlugin插件
   plugins: [
     new webpack.DllReferencePlugin({
-      context: path.resolve(__dirname, '..'),
+      context: __dirname,
       manifest: require('./vendor-manifest.json')
     })
   ]
