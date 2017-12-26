@@ -11,7 +11,18 @@ npm install
 # serve with hot reload at localhost:2020
 npm run dev
 
-# build for production with minification
+# 预打包公共依赖,当项目依赖发生变化时，需要重新打包。
+npm run build:dll
+
+# 打包测试环境发布包
+
+npm run build:sit
+
+# 打包发布预览包
+
+npm run build:ppe
+
+# 打包生产环境发布包
 npm run build
 
 # build for production and view the bundle analyzer report

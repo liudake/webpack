@@ -1,11 +1,26 @@
 'use strict'
 const path = require('path')
+const webpack = require('webpack')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
+}
+
+function assetsPublicPath() {
+  var myPath
+  if (process.env.NODE_ENV === 'production') {
+    myPath = config.build.assetsPublicPath
+  } else if (process.env.NODE_ENV === 'ppeEnvironment') {
+    myPath = config.build.assetsPublicPath
+  } else if (process.env.NODE_ENV === 'sitEnvironment') {
+    myPath = config.build.assetsPublicPath
+  } else {
+    myPath = config.dev.assetsPublicPath
+  }
+  return myPath
 }
 
 module.exports = {
@@ -16,9 +31,7 @@ module.exports = {
   output: {
     path: config.build.assetsRoot,
     filename: '[name].js',
-    publicPath: process.env.NODE_ENV === 'production'
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+    publicPath: assetsPublicPath()
   },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
@@ -73,7 +86,7 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
+          limit: 90000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       }
@@ -90,5 +103,12 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  // 添加DllReferencePlugin插件
+  plugins: [
+    new webpack.DllReferencePlugin({
+      context: path.resolve(__dirname, '..'),
+      manifest: require('./vendor-manifest.json')
+    })
+  ]
 }

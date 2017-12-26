@@ -1,21 +1,24 @@
-import device from '@/common/js/device'
 export const commonParams = {
   pageIndex: 1,
   pageSize: 10
 }
-export function getDeviceTypeUrl() {
-  let siteDomainCommon = 'http://wxtest.hx168.com.cn/' // 微信测试
+export function assetsPublicBaseUrl() {
+  let siteDomainCommon = '' // 本地开发环境
   let baseURL = `${siteDomainCommon}ycf/api/v1.0/`
   if (process.env.NODE_ENV === 'production') {
-    if (device.isWeChat()) {
-      siteDomainCommon = 'http://wx.hx168.com.cn/' // 微信生产
-      baseURL = `${siteDomainCommon}ycf/api/v1.0/`
-    }
+    siteDomainCommon = '' // 微信生产环境
+    baseURL = `${siteDomainCommon}ycf/api/v1.0/`
+  } else if (process.env.NODE_ENV === 'sitEnvironment') {
+    siteDomainCommon = '' // 微信测试环境
+    baseURL = `${siteDomainCommon}ycf/api/v1.0/`
+  } else if (process.env.NODE_ENV === 'ppeEnvironment') {
+    siteDomainCommon = '' // 微信预生产环境
+    baseURL = `${siteDomainCommon}ycf/api/v1.0/`
   }
   return { siteDomainCommon, baseURL }
 }
 
-export const baseURL = getDeviceTypeUrl().baseURL
+export const baseURL = assetsPublicBaseUrl().baseURL
 export const resourceURI = 'http://cdn1.hx168.com.cn/ycf/n/'
 
 export function checkStatus(response) {

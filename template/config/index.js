@@ -49,6 +49,9 @@ module.exports = {
   },
 
   build: {
+    prodEnv: require('./prod.env'),
+    sitEnv: require('./sit.env'),
+    ppeEnv: require('./ppe.env'),
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
@@ -61,7 +64,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 

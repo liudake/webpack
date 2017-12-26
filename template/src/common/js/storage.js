@@ -132,4 +132,4 @@ export {
   localStorageService,
   sessionStorageService,
   constantStorageService
-};
+}

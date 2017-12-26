@@ -21,7 +21,10 @@
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit/specs{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
     {{/lint}}
-    "build": "node build/build.js"
+    "build": "cross-env NODE_ENV=production env_config=prod node build/build.js",
+    "build:ppe": "cross-env NODE_ENV=ppeEnvironment env_config=ppe node build/build.js",
+    "build:sit": "cross-env NODE_ENV=sitEnvironment env_config=sit node build/build.js",
+    "build:dll": "webpack --config build/webpack.dll.conf.js"
   },
   "dependencies": {
     "axios": "^0.17.1",
@@ -41,6 +44,8 @@
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "chalk": "^2.0.1",
+    "cross-env": "^5.1.3",
+    "cross-spawn": "^5.0.1",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     {{#lint}}

@@ -9,10 +9,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-
-const env = {{#if_or unit e2e}}process.env.NODE_ENV === 'testing'
-  ? require('../config/test.env')
-  : {{/if_or}}require('../config/prod.env')
+const isProduction = process.env.NODE_ENV === 'production'
+const env = config.build[process.env.env_config + 'Env']
 
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -36,7 +34,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     // UglifyJs do not support ES6+, you can also use babel-minify for better treeshaking: https://github.com/babel/minify
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: isProduction,
+        drop_debugger: isProduction,
+        pure_funcs: isProduction ? ['console.log'] : []
       },
       sourceMap: config.build.productionSourceMap,
       parallel: true
