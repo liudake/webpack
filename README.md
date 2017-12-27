@@ -33,12 +33,12 @@ src
 
 ```
 #### webpack全面提速优化
-1、按需引用
+- 按需引用
 ```shell
 通过借助插件babel-plugin-import可以实现按需加载组件
 ```
-2、启用source-map配置
-3、启用DllPlugin和DllReferencePlugin预编译库文件
+- 启用source-map配置
+- 启用DllPlugin和DllReferencePlugin预编译库文件
 
 #### 配置多环境
 
