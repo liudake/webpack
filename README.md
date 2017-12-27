@@ -60,7 +60,7 @@ vue 2.5.1  webpack 3.6  vue-cli 2.8
 |-- .gitignore                       	// git ingnore
 |-- README.md                        	// README
 |-- index.html                       	// 入口html文件
-`-- package.json                     	// 项目及工具的依赖配置文件
+|-- package.json                     	// 项目及工具的依赖配置文件
 ```
 
 #### webpack全面提速优化
