@@ -22,15 +22,15 @@ vue 2.5.1  webpack 3.6  vue-cli 2.8
 #### 常用的项目目录（src目录核心）
 
 ```shell
-|-- build                            	// webpack配置文件
-|   |-- webpack.dll.conf.js             //  DllPlugin和DllReferencePlugin预编译库文件
-|-- config                           	// 项目打包路径
-|   |-- dev.env.js                      //  本地环境配置
-|   |-- ppe.env.js                      //  预生产环境配置
-|   |-- prod.env.js                     //  生产环境配置
-|   |-- sit.env.js                      //  测试环境配置
-|   |-- test.env.js                     //  单元测试环境配置
-|-- src                              	// 源码目录
+|-- build                           // webpack配置文件
+|   |-- webpack.dll.conf.js            //  DllPlugin和DllReferencePlugin预编译库文件
+|-- config                          // 项目打包路径
+|   |-- dev.env.js                     //  本地环境配置
+|   |-- ppe.env.js                     //  预生产环境配置
+|   |-- prod.env.js                    //  生产环境配置
+|   |-- sit.env.js                     //  测试环境配置
+|   |-- test.env.js                    //  单元测试环境配置
+|-- src                             // 源码目录
 |   |-- api                          	// 接口
 |       |-- config.js                 // 接口配置文件
 |       |-- http.js                   // 接口请求类型文件
