@@ -85,6 +85,26 @@ function getStockArea(stockcode) {
   }
   return stockarea
 }
+
+/**
+ * 获取url传参
+ * @param {*} name
+ */
+function getQueryString(name) {
+  let queryString = window.location.hash.split('?')[1];
+  let ret = {};
+  if (queryString) {
+    let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i');
+    let r = queryString.match(reg);
+    if (r !== null) {
+      ret[name] = decodeURIComponent(r[2]);
+    } else {
+      return null;
+    }
+  }
+  return ret;
+}
+
 /**
  * param 将要转为URL参数字符串的对象
  * key URL参数字符串的前缀
@@ -127,6 +147,7 @@ export default {
   padString,
   get,
   getStockArea,
+  getQueryString,
   format,
   excludeSpecial,
   parseParam

@@ -69,3 +69,11 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
+
+// flex布局
+.layout(@dir: column, @justify: center, @align: right) {
+  display: flex;
+  flex-direction: @dir;
+  justify-content: @justify;
+  align-items: @align;
+}

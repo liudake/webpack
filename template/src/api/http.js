@@ -1,6 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
-import { checkStatus, checkCode, checkErr, baseURL } from './config'
+import { baseURL } from './constants';
+import { checkStatus, checkCode, checkErr } from './config'
 
 /**
  * [get,post,put,delete      [封装请求]]

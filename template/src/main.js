@@ -13,6 +13,9 @@ import router from './router'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{#vuex}}
 import store from './store'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 {{/vuex}}
+
+import './common/js/rem'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import './common/js/filters'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 //  关闭生产环境的调试信息
 const isDebugMode = process.env.NODE_ENV !== 'production'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 Vue.config.debug = isDebugMode{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
